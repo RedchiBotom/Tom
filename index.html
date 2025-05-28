@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MaBoutique - Accueil</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page-transition"></div>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">MaBoutique</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero fade-in">
+    <div class="container">
+      <h2>Je suis trop fort la verite</h2>
+      <p>43.598 au ntk lexy</p>
+    </div>
+  </section>
+
+  <section class="presentation slide-up">
+    <div class="container">
+      <h3>Lioret del mar j'arrive</h3>
+      <p>mieux que cn wlh.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Tom ler goat</p>
+    </div>
+  </footer>
+
+  <script>
+    const links = document.querySelectorAll('a[href]');
+    const transition = document.querySelector('.page-transition');
+
+    links.forEach(link => {
+      link.addEventListener('click', function (e) {
+        const target = this.getAttribute('href');
+        if (target && !target.startsWith('#') && !target.startsWith('mailto:')) {
+          e.preventDefault();
+          transition.classList.add('active');
+          setTimeout(() => {
+            window.location.href = target;
+          }, 600);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
